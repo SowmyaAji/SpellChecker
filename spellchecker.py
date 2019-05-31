@@ -20,42 +20,49 @@ def erase_triple_dupes(word):
     return regex.sub(r"\1\1", word)
 
 
-def spell_checker(words):
-    """look at input word and check if it is a valid English word as per our limited dictionary, or not. If invalid, make suggestions of similar words"""
+def compute_suggested_words(in_word, words):
+    suggested_words = {}
+    for word in words:
+        if len(in_word) == len(word):
+            suggested_words[word] = compute_count(in_word, word)
+    return suggested_words
 
-    # get input
+
+def compute_count(in_word, word):
+    count = 0
+    for i in range(len(in_word)):
+        if in_word[i] in word:
+            count += 1
+    return count
+
+
+def find_likely_words(count, in_word):
+    return [key for key, value in count.items() if value == len(in_word)]
+
+
+def find_optional_words(count, in_word):
+    return [key for key, value in count.items() if value == len(in_word) - 1]
+
+
+def ask():
     i_word = input("Word to check: ").lower()
     # clean the input of redundant triple dupes
-    in_word = erase_triple_dupes(i_word)
-    print("The word you have asked to check is: " + in_word)
+    return erase_triple_dupes(i_word)
 
-    # check the word against the dictionary in our txt file
-    suggest_words = []
+
+def spell_checker(words):
+    """look at input word and check if it is a valid English word as per our limited dictionary, or not. If invalid, make suggestions of similar words"""
+    # get input
+    in_word = ask()
+    print("The word you have asked to check is: " + in_word)
     if in_word in words:
         print("Yes it is a valid word")
     # if the word does not match any in our dictionary, suggest alternatives
     else:
-        for word in words:
-            if len(in_word) == len(word):
-                for i in range(len(in_word)):
-                    if in_word[i] in word:
-                        # get all words that have the input alphabets in them
-                        suggest_words.append(word)
-
-        count = {}
-        suggest_arr = []
-        word_arr = []
-        for word in suggest_words:
-            # get the count of each word that is suggested. For the correct word, the count will be the same as the length of the word,as each iteration would have added that word to suggest_words list
-            count[word] = suggest_words.count(word)
-
-        for key, value in count.items():
-            if value == len(in_word):
-                word_arr.append(key)
-            if value == (len(in_word))-1:
-                suggest_arr.append(key)
-        print("This maybe the word you are looking for: ", word_arr)
-        print("Options: ",  suggest_arr)
+        count = compute_suggested_words(in_word, words)
+        print("This maybe the word you are looking for: ",
+              find_likely_words(count, in_word))
+        print("Options: ",  find_optional_words(count, in_word))
 
 
 spell_checker(get_words())
