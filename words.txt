@@ -45,6 +45,7 @@ and
 animal
 another
 answer
+ant
 any
 anyone
 anything
@@ -619,6 +620,7 @@ pattern
 pay
 peace
 people
+pepper
 per
 perform
 performance
