@@ -83,9 +83,12 @@ Excess letters
 
 #Output
 
-The program does not account for excess letters, it returns words that could have some of those 
-letters and are of the same length. It is a problem that still has to be sorted.
+The program automatically removes the third consecutive duplicate letter, as English does not have a 
+single word with three consecutive duplicates - like 'ppp' in the example given. Our program cleans up that
+input by removing the third duplicate and returns it as a valid word.
 
-('This maybe the word you are looking for: ', [])
+Word to check: 'happpy'
 
-('Options: ', ['happen', 'player'])
+The word you have asked to check is: happy [this is the auto-corrected result]
+
+Yes it is a valid word
