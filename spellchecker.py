@@ -22,12 +22,18 @@ def spell_checker(words):
                     if i_word[i] in word:
                         suggest_words.append(word)
         count = {}
+        suggest_arr = []
+        word_arr = []
         for word in suggest_words:
             count[word] = suggest_words.count(word)
 
         for key, value in count.items():
             if value == len(i_word):
-                print("This maybe the word you are looking for: " + key)
+                word_arr.append(key)
+            if value == (len(i_word))-1:
+                suggest_arr.append(key)
+        print("This maybe the word you are looking for: ", word_arr)
+        print("Options: ",  suggest_arr)
 
 
 spell_checker(words)
