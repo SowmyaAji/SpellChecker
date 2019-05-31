@@ -18,6 +18,7 @@ Clone this repository, cd into it and run python spellchecker.py from command li
 ##Input
 
 Check if a word exists in the dictionary. 
+
 'apple'
 
 ##Output
