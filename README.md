@@ -26,6 +26,8 @@ Where the word is misspelt by a letter set in a different place
 #Output
 Suggestion word with transposed letters
 ('This maybe the word you are looking for: ', ['able'])
+
+Additional suggestions, in case it is not just a problem of transposed letteres
 ('Options: ', ['late', 'real', 'beat', 'deal', 'blue', 'lead', 'base', 'ball'])
 
 #Input
@@ -33,11 +35,12 @@ Where the word is misspelt by a letter set in a different place, with a duplicat
 'appel'
 
 #Output
-If an alphabet is repeated, the program 
-tries to find another word with another alphabet that could be in place of the repeated
-alphabet. It also suggests the same word with transposed letters.
+If an alphabet is repeated, the program  tries to find another word with another alphabet
+that could be in place of the repeatedalphabet. It also suggests the word with transposed letters.
 
 ('This maybe the word you are looking for: ', ['place', 'apple'])
+
+Valid options with just one alphabet or two alphabets that are different
 ('Options: ', ['paper', 'plant', 'space', 'apply', 'speak', 'peace'])
 
 #Input
