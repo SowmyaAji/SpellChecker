@@ -10,6 +10,11 @@ solution and the Javascript version of it:
 https://github.com/WillSen/spellchecker-autocorrect/blob/master/index.js
 both of which are fuller solutions
 
+#Installation
+
+Clone this repository, cd into it and run python spellchecker.py from command line
+
+
 ##Input
 
 Check if a word exists in the dictionary. 
