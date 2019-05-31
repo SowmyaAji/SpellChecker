@@ -22,9 +22,11 @@ Check if a word exists in the dictionary.
 ##Input
 
 Where the word is misspelt by a letter set in a different place
+
 'abel'
 
 ##Output
+
 
 Suggestion word with transposed letters
 
@@ -41,6 +43,8 @@ Where the word is misspelt by a letter set in a different place, with a duplicat
 'appel'
 
 ##Output
+
+
 If an alphabet is repeated, the program  tries to find another word with another alphabet
 that could be in place of the repeatedalphabet. It also suggests the word with transposed letters.
 
