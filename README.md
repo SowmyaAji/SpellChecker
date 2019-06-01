@@ -3,7 +3,7 @@
 
 #Overview
 
-A python formula to check if a word has been misspelt. This is an attempt
+A python program to check if a word has been misspelt. This is an attempt
 to work it out without using the python library pyspellchecker which does
 the job quite efficiently. There is also the http://norvig.com/spell-correct.html 
 solution and the Javascript version of it:
