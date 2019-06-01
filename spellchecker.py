@@ -57,6 +57,7 @@ class SpellCheck:
 
 def ask():
     i_word = input("Word to check: ").lower()
+
     # clean the input of redundant triple dupes
     return erase_triple_dupes(i_word)
 
@@ -67,6 +68,7 @@ def spell_checker(words):
     """look at input word and check if it is a valid English word as per our limited dictionary, or not. If invalid, make suggestions of similar words"""
     in_word = ask()
     print("The word you have asked to check is: " + in_word)
+
     if in_word in words:
         print("Yes it is a valid word")
     else:
