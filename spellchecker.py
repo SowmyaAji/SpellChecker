@@ -1,7 +1,7 @@
 
 import re
 
-# open words.txt file which has about 1,000 commonly used English wo
+# open words.txt file which has over 69,000 English words
 
 
 def get_words():
