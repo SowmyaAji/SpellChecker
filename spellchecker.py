@@ -73,9 +73,10 @@ def spell_checker(words):
         print("Yes it is a valid word")
     else:
         speller = SpellCheck(words, in_word)
-        print("This maybe the word you are looking for: ",
+        print("The word you are looking for maybe: ",
               speller.find_likely_words())
-        print("Options: ",  speller.find_optional_words())
+        if len(speller.find_likely_words()) == 0:
+            print("Options: ",  speller.find_optional_words())
 
 
 spell_checker(get_words())
