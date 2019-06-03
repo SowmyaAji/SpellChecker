@@ -79,4 +79,5 @@ def spell_checker(words):
             print("Options: ",  speller.find_optional_words())
 
 
-spell_checker(get_words())
+if __name__ == '__main__':
+    spell_checker(get_words())
