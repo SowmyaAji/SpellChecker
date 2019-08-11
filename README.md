@@ -22,6 +22,7 @@ Clone this repository, cd into it. And run from command line:
 
 ```
 $ pipenv shell
+$ pip install -r requirements.txt
 $ python spellchecker.py 
 ```
 
